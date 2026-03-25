@@ -14,6 +14,15 @@ The required packages of the environment we used to conduct experiments are list
 
 Please note that you should install `apex` by following the instructions from https://github.com/NVIDIA/apex#installation, instead of directly running `pip install apex`.
 
+On **ASU Sol**, load the mamba module and use the `creamfl` conda environment (do not use `mamba activate`; use `source activate` as documented on the cluster):
+
+```bash
+module load mamba cuda-12.1.1-gcc-12.1.0
+source activate creamfl
+```
+
+In batch scripts, run `source activate creamfl` inside the same shell before `python`, or invoke `$CONDA_PREFIX/bin/python` after activation so you do not pick up the login node’s base `python`.
+
 ### Datasets
 
 For datasets, please download the MSCOCO, Flicker30K, CIFAR-100, and AG_NEWS datasets, and arrange their directories as follows:
